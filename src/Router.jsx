@@ -6,12 +6,12 @@ import Header from './components/Header';
 import IssueList from './pages/IssueList/IssueList';
 import IssueListDetail from './pages/IssueListDetail/IssueListDetail';
 
-const Context = React.createContext()
+export const ListContext = React.createContext()
 const Router = () => {
-  const [statelist, getlist] = useState()
+  const [stateList, setList] = useState()
   return (
-    <Context.Provider value={{
-      statelist, getlist
+    <ListContext.Provider value={{
+      stateList, setList
     }}>
     {/* api 연동 후 suspense 작동 확인 요망 */}
       <Suspense fallback={<h1>로딩중</h1>}>
@@ -21,7 +21,7 @@ const Router = () => {
           <Route path='/detail' element={<IssueListDetail />}></Route>
         </Routes>
       </Suspense>
-    </Context.Provider>
+    </ListContext.Provider>
   );
 };
 
