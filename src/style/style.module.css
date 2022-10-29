@@ -4,3 +4,12 @@
   background-color: black;
   color: white;
 }
+
+.center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem;
+  color: black;
+}
