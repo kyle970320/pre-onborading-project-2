@@ -59,7 +59,7 @@ const IssueList = () => {
       {
         stateList && (stateList.map((el) => {
           return (
-            <Link key={el.number}>
+            <Link to={'/detail'} key={el.number} state={{el}}>
               <br />
               <span>{el.number}</span>/
               <span>{el.comments}</span>/
