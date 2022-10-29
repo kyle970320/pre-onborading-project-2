@@ -4,9 +4,11 @@ import { useEffect } from 'react';
 import { getAPI } from '../../utils/axios';
 import {ListContext} from '../../Router'
 import { Link } from 'react-router-dom';
+import { useRef } from 'react';
 
 const IssueList = () => {
   const {stateList, setList}=useContext(ListContext)
+  const observer = useRef()
   useEffect(()=>{
     const getList =async()=>{
       const listItem = await getAPI(1)
@@ -32,6 +34,7 @@ const IssueList = () => {
         )
         }))
       }
+      <p ref={observer}/>
     </div>
   );
 };
